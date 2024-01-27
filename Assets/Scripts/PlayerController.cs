@@ -34,23 +34,25 @@ public class PlayerController : MonoBehaviour
             {
                 anim.Play("walk");
                 rb.AddForce(Vector2.right*playerSpeed);
+                // rb.AddForce(Vector2.right*playerSpeed*Time.deltaTime);
             }
             else
             {
                 anim.Play("walk back");
                 rb.AddForce(Vector2.left*playerSpeed);
+                // rb.AddForce(Vector2.left*playerSpeed*Time.deltaTime);
             }
         }
         else
         {
-            anim.Play("Idle");
+            anim.Play("idle");
         }
 
         isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
-        if(isOnGround == true && Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("jumping");
-            rb.AddForce(Vector2.up * jumpForce);
-        }
+        // if(isOnGround == true && Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     Debug.Log("jumping");
+        //     rb.AddForce(Vector2.up * jumpForce*Time.deltaTime);
+        // }
     }
 }

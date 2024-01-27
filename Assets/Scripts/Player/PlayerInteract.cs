@@ -5,8 +5,13 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     public List<Interactable> equipped;
+    private OutfitSwapper outfitSwapper;
     private Interactable interactable;
 
+    void Start()
+    {
+        outfitSwapper = gameObject.GetComponent<OutfitSwapper>();
+    }
 
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -71,6 +76,8 @@ public class PlayerInteract : MonoBehaviour
     {
         inp.gameObject.transform.parent = transform;
         equipped.Add(inp);
+
+        outfitSwapper.swapOutfit(inp);
 
         inp.gameObject.SetActive(false);
     }
