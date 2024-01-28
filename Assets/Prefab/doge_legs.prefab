@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3153013893049243128}
   - component: {fileID: 7676934969105540294}
   - component: {fileID: 745801549530682093}
+  - component: {fileID: -5469903608172224107}
   m_Layer: 0
   m_Name: doge_legs
   m_TagString: Untagged
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dee8d65fa4cd144486fb1eb754c3588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabName: Dog
   Slot: 2
   prefab: {fileID: 2688102026551057864}
   equippedSprite: {fileID: 21300000, guid: f6ea9a8720d025b47b4b9ff12ca45716, type: 3}
@@ -174,3 +176,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.65, y: 5.07}
   m_EdgeRadius: 0
+--- !u!114 &-5469903608172224107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688102026551057864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bfea2cb03ab5b4c8fb7547b72cf273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 0
+  chatBubblePrefab: {fileID: 7577302010033241141, guid: 8377d05efe8654245828fd07ccf40a21, type: 3}
+  dialogue: 

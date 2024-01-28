@@ -88,12 +88,13 @@ public class PlayerInteract : MonoBehaviour
         }
         if (isSlotEmpty)
         {
-            EquipInteractable(interactable);
+            SwapInteractable(null, interactable);
         }
     }
 
     private void SwapInteractable(Interactable oldInteractable, Interactable newInteractable)
     {
+      
         //Dog Interaction
         if (newInteractable.prefabName == "Dog" && !isDogInteractionComplete)
         {
@@ -110,6 +111,7 @@ public class PlayerInteract : MonoBehaviour
 
             if (burger == null)
             {
+                print("burger nul");
                 GameObject obj = Instantiate(chatBubble, newInteractable.transform);
                 ChatBubble bubble = obj.GetComponent<ChatBubble>();
                 bubble.StartChatBubble(DogWantBurgerText);
@@ -140,7 +142,7 @@ public class PlayerInteract : MonoBehaviour
 
             if (key == null)
             {
-                GameObject obj = Instantiate(chatBubble, transform);
+                GameObject obj = Instantiate(chatBubble, newInteractable.transform);
                 ChatBubble bubble = obj.GetComponent<ChatBubble>();
                 bubble.StartChatBubble(MissingKeyText);
                 return;
@@ -165,7 +167,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void DropInteractable(Interactable input)
     {
-
+        if (input == null) return;
         //GameObject a = Instantiate(input.prefab, WorldManager.CurrentWorld.transform);
         GameObject a = Instantiate(input.prefab, transform.position,transform.rotation);
         a.transform.localScale = a.transform.lossyScale;//new Vector3(,1,1f);
@@ -173,9 +175,11 @@ public class PlayerInteract : MonoBehaviour
         a.SetActive(true);
         Destroy(input.gameObject);
     }
-
+      
     private void EquipInteractable(Interactable inp)
     {
+        if (inp == null) return;
+
         inp.gameObject.transform.SetParent(transform, false);
         equipped.Add(inp);
 

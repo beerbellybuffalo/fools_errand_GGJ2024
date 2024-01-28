@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dee8d65fa4cd144486fb1eb754c3588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabName: Burger
   Slot: 2
   prefab: {fileID: 2688102026551057864}
   equippedSprite: {fileID: 21300000, guid: 336da9860426f064c9269bf83e04a6ed, type: 3}
