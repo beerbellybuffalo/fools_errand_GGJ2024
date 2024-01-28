@@ -6,12 +6,17 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     public List<Interactable> equipped;
+    private OutfitSwapper outfitSwapper;
     private Interactable interactable;
     public GameObject chatBubble;
 
     private bool isDogInteractionComplete = false;
     private bool isDoorInteractionComplete = false;
 
+    void Start()
+    {
+        outfitSwapper = gameObject.GetComponent<OutfitSwapper>();
+    }
 
     public string DogWantBurgerText = "Dis not Borgor :(";
     public string MissingKeyText = "Perhaps I need a key...";
@@ -154,6 +159,8 @@ public class PlayerInteract : MonoBehaviour
     {
         inp.gameObject.transform.parent = transform;
         equipped.Add(inp);
+
+        outfitSwapper.swapOutfit(inp);
 
         inp.gameObject.SetActive(false);
     }

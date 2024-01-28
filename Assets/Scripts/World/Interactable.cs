@@ -18,7 +18,5 @@ public class Interactable : MonoBehaviour
 
     public GameObject prefab;
 
-    public Sprite EquipSprite;
-
-
+    public Sprite equippedSprite;
 }
