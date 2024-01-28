@@ -33,13 +33,13 @@ public class PlayerController : MonoBehaviour
             if(Input.GetAxisRaw("Horizontal") > 0)
             {
                 anim.Play("walk");
-                rb.AddForce(Vector2.right*playerSpeed);
+                rb.AddForce(Vector2.right*playerSpeed * Time.deltaTime);
                 // rb.AddForce(Vector2.right*playerSpeed*Time.deltaTime);
             }
             else
             {
                 anim.Play("walk back");
-                rb.AddForce(Vector2.left*playerSpeed);
+                rb.AddForce(Vector2.left*playerSpeed * Time.deltaTime);
                 // rb.AddForce(Vector2.left*playerSpeed*Time.deltaTime);
             }
         }

@@ -10,6 +10,11 @@ public class PlayerInteract : MonoBehaviour
     private Interactable interactable;
     public GameObject chatBubble;
 
+    public Material outline;
+    public Material defaultMaterial;
+
+    public GameObject currentOutline;
+
     private bool isDogInteractionComplete = false;
     private bool isDoorInteractionComplete = false;
 
@@ -30,17 +35,30 @@ public class PlayerInteract : MonoBehaviour
         print("TriggerEnter");
         Interactable a = collision.gameObject.GetComponent<Interactable>();
         if (a == null) return;
+
+        if(this.interactable != null)
+        {
+            interactable.gameObject.GetComponent<SpriteRenderer>().material = defaultMaterial;
+        }
         this.interactable = a;
+        interactable.gameObject.GetComponent<SpriteRenderer>().material = outline;
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
+        if(collision.gameObject.GetComponent<SpriteRenderer>()!= null)
+        {
+            collision.gameObject.GetComponent<SpriteRenderer>().material = defaultMaterial;
+
+        }
         Interactable a = collision.gameObject.GetComponent<Interactable>();
         if (a == null) return;
         if (interactable == a)
         {
             interactable = null;
+
         }
+
     }
 
     // Update is called once per frame

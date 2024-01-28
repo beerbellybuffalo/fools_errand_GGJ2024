@@ -1,15 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WorldManager : MonoBehaviour
 {
 
-    public List<GameObject> Levels;
+    public GameObject City;
+    public GameObject Garden;
     public int timeLeft = 60;
 
     public static World CurrentWorld;
+    public Image clock;
 
+    public static WorldManager instance;
+
+    private void Start()
+    {
+        if (instance == null) instance = this;
+        StartTimer();
+    }
     public void StartTimer()
     {
         StartCoroutine(TimerCoroutine());
@@ -21,6 +31,7 @@ public class WorldManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             timeLeft -= 1;
+            clock.fillAmount = timeLeft / 60f;
         }
         OnTimerExpire();
         yield return null;
@@ -45,5 +56,43 @@ public class WorldManager : MonoBehaviour
         return false;
     }
 
+    public void CityLeft()
+    {
+       
+        foreach (Transform child in PlayerInteract.instance.transform.parent)
+        {
+            child.transform.position += new Vector3(-9, 0, 0);
+        }
+        City.SetActive(true);
+        Garden.SetActive(false);
+    }
 
+    public void CityRight()
+    {
+        foreach (Transform child in PlayerInteract.instance.transform.parent)
+        {
+            child.transform.position += new Vector3(9, 0, 0);
+        }
+        City.SetActive(true);
+        Garden.SetActive(false);
+    }
+
+    public void GardenLeft()
+    {
+        foreach (Transform child in PlayerInteract.instance.transform.parent)
+        {
+            child.transform.position += new Vector3(-9, 0, 0);
+        }
+        City.SetActive(false);
+        Garden.SetActive(true);
+    }
+    public void GardenRight()
+    {
+        foreach (Transform child in PlayerInteract.instance.transform.parent)
+        {
+            child.transform.position += new Vector3(9, 0, 0);
+        }
+        City.SetActive(false);
+        Garden.SetActive(true);
+    }
 }
