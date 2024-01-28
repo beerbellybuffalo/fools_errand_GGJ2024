@@ -170,7 +170,9 @@ public class PlayerInteract : MonoBehaviour
         if (input == null) return;
         //GameObject a = Instantiate(input.prefab, WorldManager.CurrentWorld.transform);
         GameObject a = Instantiate(input.prefab, transform.position,transform.rotation);
-        a.transform.localScale = a.transform.lossyScale;//new Vector3(,1,1f);
+        a.transform.localScale = new Vector3(0.5f , 0.5f, 0.5f);
+
+        a.gameObject.transform.SetParent(WorldManager.CurrentWorld.transform);
 
         a.SetActive(true);
         Destroy(input.gameObject);

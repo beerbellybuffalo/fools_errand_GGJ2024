@@ -10,7 +10,7 @@ public class WorldManager : MonoBehaviour
     public GameObject Garden;
     public int timeLeft = 60;
 
-    public static World CurrentWorld;
+    public static GameObject CurrentWorld;
     public Image clock;
 
     public static WorldManager instance;
@@ -19,6 +19,7 @@ public class WorldManager : MonoBehaviour
     {
         if (instance == null) instance = this;
         StartTimer();
+        CurrentWorld = City;
     }
     public void StartTimer()
     {
@@ -65,6 +66,7 @@ public class WorldManager : MonoBehaviour
         }
         City.SetActive(true);
         Garden.SetActive(false);
+        CurrentWorld = City;
     }
 
     public void CityRight()
@@ -75,6 +77,7 @@ public class WorldManager : MonoBehaviour
         }
         City.SetActive(true);
         Garden.SetActive(false);
+        CurrentWorld = City;
     }
 
     public void GardenLeft()
@@ -85,6 +88,7 @@ public class WorldManager : MonoBehaviour
         }
         City.SetActive(false);
         Garden.SetActive(true);
+        CurrentWorld = Garden;
     }
     public void GardenRight()
     {
@@ -94,5 +98,6 @@ public class WorldManager : MonoBehaviour
         }
         City.SetActive(false);
         Garden.SetActive(true);
+        CurrentWorld = Garden;
     }
 }
