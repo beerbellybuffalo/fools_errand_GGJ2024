@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7217432365817397807}
   - component: {fileID: 3153013893049243128}
   - component: {fileID: 7676934969105540294}
-  - component: {fileID: 745801549530682093}
+  - component: {fileID: 312782906308212154}
   m_Layer: 0
-  m_Name: picnic_torso
+  m_Name: clown pants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.183, y: -0.723, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 924c8ee454186e647aefffce1f83644e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6873e30bd93c6847af91a6cdc137547, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dee8d65fa4cd144486fb1eb754c3588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Slot: 1
+  Slot: 2
   prefab: {fileID: 2688102026551057864}
-  equippedSprite: {fileID: 21300000, guid: 69842370946d46b438e9112d03d4cc83, type: 3}
+  equippedSprite: {fileID: 21300000, guid: c6873e30bd93c6847af91a6cdc137547, type: 3}
 --- !u!50 &7676934969105540294
 Rigidbody2D:
   serializedVersion: 4
@@ -129,8 +129,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &745801549530682093
-BoxCollider2D:
+--- !u!60 &312782906308212154
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -165,12 +165,15 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.62, y: 3.94}
+    oldSize: {x: 5.73, y: 4.9}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 6.65, y: 5.07}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5773587}
+      - {x: -0.5, y: -0.28866667}
+      - {x: 0.5, y: -0.28866667}
+  m_UseDelaunayMesh: 0
