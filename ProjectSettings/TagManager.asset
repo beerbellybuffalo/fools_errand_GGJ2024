@@ -7,6 +7,7 @@ TagManager:
   - HEAD
   - TORSO
   - PANTS
+  - IdentifierImage
   layers:
   - Default
   - TransparentFX
