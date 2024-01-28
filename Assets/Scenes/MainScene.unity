@@ -848,6 +848,8 @@ GameObject:
   - component: {fileID: 679271302}
   - component: {fileID: 679271305}
   - component: {fileID: 679271306}
+  - component: {fileID: 679271307}
+  - component: {fileID: 679271308}
   m_Layer: 0
   m_Name: Underwear
   m_TagString: Untagged
@@ -984,6 +986,57 @@ MonoBehaviour:
   targetRotation: 0
   rb: {fileID: 679271302}
   force: 500
+--- !u!114 &679271307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679271298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c1385fd880a6a46978144f9e266672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipped: []
+  chatBubble: {fileID: 7577302010033241141, guid: 8377d05efe8654245828fd07ccf40a21, type: 3}
+  DogWantBurgerText: Dis not Borgor :(
+  MissingKeyText: Perhaps I need a key...
+--- !u!70 &679271308
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679271298}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 2.220573}
+  m_Size: {x: 1, y: 19.613598}
+  m_Direction: 0
 --- !u!1 &829204830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,7 +1834,6 @@ GameObject:
   - component: {fileID: 1929610313}
   - component: {fileID: 1929610314}
   - component: {fileID: 1929610315}
-  - component: {fileID: 1929610316}
   - component: {fileID: 1929610317}
   m_Layer: 0
   m_Name: Player
@@ -1849,26 +1901,13 @@ MonoBehaviour:
   anim: {fileID: 1929610314}
   rb: {fileID: 679271302}
   jumpForce: 2000
-  playerSpeed: 10
+  playerSpeed: 50
   jumpHeight: {x: 0, y: 0}
   positionRadius: 0.3
   ground:
     serializedVersion: 2
     m_Bits: 64
   playerPos: {fileID: 57978061}
---- !u!114 &1929610316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929610312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c1385fd880a6a46978144f9e266672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  equipped: []
 --- !u!114 &1929610317
 MonoBehaviour:
   m_ObjectHideFlags: 0

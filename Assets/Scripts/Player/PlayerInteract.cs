@@ -15,17 +15,15 @@ public class PlayerInteract : MonoBehaviour
 
     void Start()
     {
-        outfitSwapper = gameObject.GetComponent<OutfitSwapper>();
+        if (instance == null) instance = this;
+        outfitSwapper = gameObject.transform.parent.GetComponent<OutfitSwapper>();
     }
 
     public string DogWantBurgerText = "Dis not Borgor :(";
     public string MissingKeyText = "Perhaps I need a key...";
 
     public static PlayerInteract instance;
-    public void Start()
-    {
-        if (instance == null) instance = this;
-    }
+
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -150,14 +148,17 @@ public class PlayerInteract : MonoBehaviour
     private void DropInteractable(Interactable input)
     {
 
-        GameObject a = Instantiate(input.prefab, WorldManager.CurrentWorld.transform);
+        //GameObject a = Instantiate(input.prefab, WorldManager.CurrentWorld.transform);
+        GameObject a = Instantiate(input.prefab, transform.position,transform.rotation);
+        a.transform.localScale = a.transform.lossyScale;//new Vector3(,1,1f);
+
         a.SetActive(true);
         Destroy(input.gameObject);
     }
 
     private void EquipInteractable(Interactable inp)
     {
-        inp.gameObject.transform.parent = transform;
+        inp.gameObject.transform.SetParent(transform, false);
         equipped.Add(inp);
 
         outfitSwapper.swapOutfit(inp);

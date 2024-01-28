@@ -533,6 +533,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1558905152}
+  - component: {fileID: 1558905153}
   m_Layer: 0
   m_Name: WorldManager
   m_TagString: Untagged
@@ -555,6 +556,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1558905153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558905151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be80f54ca5311a4381d4b71959af736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Levels: []
+  timeLeft: 60
 --- !u!1 &2078623384 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2688102026551057864, guid: a00792f7c5bdf714593e8bb5a54a870b, type: 3}
