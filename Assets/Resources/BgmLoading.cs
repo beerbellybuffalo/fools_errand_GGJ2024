@@ -24,17 +24,20 @@ public class BgmLoading : MonoBehaviour
 
         // Initialize the AudioSource
         audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.loop = true; // Enable looping
+        audioSource.loop = false; // Enable looping
 
         // Initialize the dictionary
         backgroundMusicMap = new Dictionary<string, AudioClip>();
 
-        AudioClip ParkBGM = Resources.Load<AudioClip>("GameBGM");
-        AudioClip CityBGM = Resources.Load<AudioClip>("EndingBGM");
+        AudioClip ClownBGM = Resources.Load<AudioClip>("ClownBGM");
+        AudioClip NakedBGM = Resources.Load<AudioClip>("NakedBGM");
+        AudioClip NeutralBGM = Resources.Load<AudioClip>("NeutralBGM");
 
+        backgroundMusicMap.Add("Neutral Text", NeutralBGM);
+        backgroundMusicMap.Add("Clown Text", ClownBGM);
+        backgroundMusicMap.Add("Naked Text", NakedBGM);
+        backgroundMusicMap.Add("Meme Text", NeutralBGM);
 
-        backgroundMusicMap.Add("ParkBG", ParkBGM);
-        backgroundMusicMap.Add("CityBG", CityBGM);
 
         // Subscribe to the sceneLoaded event
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -44,7 +47,7 @@ public class BgmLoading : MonoBehaviour
     {
         // Find the background image in the scene
         // Assuming the background image is attached to a GameObject with a specific tag
-        GameObject backgroundImageObject = GameObject.FindWithTag("BackgroundImage");
+        GameObject backgroundImageObject = GameObject.FindWithTag("IdentifierImage");
 
         if (backgroundImageObject != null)
         {
