@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2688102026551057864}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.183, y: -0.723, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -190,4 +190,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   chatBubblePrefab: {fileID: 7577302010033241141, guid: 8377d05efe8654245828fd07ccf40a21, type: 3}
-  dialogue: 
+  dialogue: Can I has Borgor?
